@@ -108,8 +108,8 @@ haproxy_config:
 start_haproxy:
   cmd.run:
     - name: >
-        docker run -d --name haproxy
-        -p 80:80
+        docker run -d --name haproxy-v2
+        -p 443:443
         -v /etc/haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
         haproxy:latest
     - unless: docker ps --format '{{"{{.Names}}"}}' | grep -w haproxy
