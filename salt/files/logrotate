@@ -1,0 +1,12 @@
+/var/log/nginx/*.log {
+   # log files are rotated every hour
+   hourly
+   # truncate the original log file after creating a copy
+   copytruncate
+   # log files are rotated 10 times before being removed
+   rotate 10
+   # old log files are compressed
+   compress
+   # if the log file is missing it will go on to the next one without issuing an error message
+   missingok
+}
