@@ -1,6 +1,11 @@
 #ubuntu
 {% if grains['os'] == 'Ubuntu' and grains['osrelease'].startswith('24.04') %}
 
+group_kartaca:
+  group.present:
+    - gid: 2025
+    - name: kartaca
+
 user_kartaca:
   user.present:
     - name: kartaca
@@ -111,6 +116,8 @@ start_haproxy:
     - require:
         - file: haproxy_config
 
+
+
 {% endif %}
 
 
@@ -118,6 +125,11 @@ start_haproxy:
 
 #Debian
 {% if grains['os'] == 'Debian' and grains['osrelease'] == '12' %}
+
+group_kartaca:
+  group.present:
+    - gid: 2025
+    - name: kartaca
 
 user_kartaca:
   user.present:
