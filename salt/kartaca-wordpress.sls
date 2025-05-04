@@ -35,7 +35,6 @@ packages:
     - pkgs:
       - htop
       - tcptraceroute
-      - ping
       - iputils-ping
       - dnsutils
       - sysstat
