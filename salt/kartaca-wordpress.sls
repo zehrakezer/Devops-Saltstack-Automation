@@ -235,6 +235,7 @@ move_wordpress_files:
     - onlyif: test -d /var/www/html/wordpress
     - require:
         - cmd: extract_wordpress
+        - pkg: packages
 
 set_permissions:
   cmd.run:
